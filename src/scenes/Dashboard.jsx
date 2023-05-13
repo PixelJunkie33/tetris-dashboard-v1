@@ -30,7 +30,7 @@ const Dashboard = ({ data }) => {
   const colors = tokens(theme.palette.mode);
 
   const [lvl, setLvl] = useState(18);
-  const [timeSpan, setTimeSpan] = useState("Last Week");
+  const [timeSpan, setTimeSpan] = useState("Last Year");
   const [games, setGames] = useState(filterGames(data, lvl, timeSpan));
 
   function handleTimeSpanChange(event) {

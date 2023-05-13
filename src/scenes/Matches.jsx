@@ -12,7 +12,6 @@ const Matches = ({ matches, onUpdateMatches }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [selectionModel, setSelectionModel] = useState([]);
-  console.log(matches)
 
   function handleDelete() {
     const filteredGames = matches.filter(

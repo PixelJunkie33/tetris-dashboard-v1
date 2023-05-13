@@ -38,7 +38,6 @@ function App() {
 
   function updateMatches(matchData) {
     setMatches(matchData);
-    console.log(matchId);
   }
 
   function updateId(id) {

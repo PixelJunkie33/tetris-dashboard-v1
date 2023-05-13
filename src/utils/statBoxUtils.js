@@ -83,7 +83,6 @@ export function getAvgTrt(data, lvl, timeSpan) {
 }
 
 export function getPB(data, lvl, timeSpan, type) {
-  console.log(data)
   const [currentGames, lastGames] = getCurrentAndLastGames(data, lvl, timeSpan);
   const current = Math.max(
     ...currentGames.map((x) => x[type.toLowerCase()])

@@ -15,7 +15,6 @@ export function getPBHistory(games) {
       num += 1;
     }
   }
-  // console.log(pbs)
   return pbs;
 }
 

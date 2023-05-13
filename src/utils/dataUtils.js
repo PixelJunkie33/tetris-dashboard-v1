@@ -94,18 +94,11 @@ export function addSessions(games) {
 
 export function addPBs(data, games, lvl) {
   let filteredData = data ? data.filter((x) => x.start === lvl) : [];
-  // console.log(filteredData.map((x) => x.score))
-  // console.log(filteredData.map((x) => x.lines))
-  // console.log(filteredData.map((x) => x.trans))
-  // console.log(filteredData.map((x) => x.post))
   let filteredGames = games.filter((x) => x.start === lvl);
   let pbScore = data ? Math.max(...filteredData.map((x) => x.score)) : 0;
   let pbLines = data ? Math.max(...filteredData.map((x) => x.lines)) : 0;
   let pbTrans = data ? Math.max(...filteredData.map((x) => x.trans)) : 0;
   let pbPost = data ? Math.max(...filteredData.map((x) => x.post)) : 0;
-  // console.log("filtered", filteredData)
-  // console.log("filtered games", filteredGames)
-  // console.log(pbScore, pbLines, pbTrans, pbPost)
   for (let i = 0; i < games.length; i++) {
     let pbType = [];
     let pbVal = [];
@@ -134,7 +127,6 @@ export function addPBs(data, games, lvl) {
           pbVal.push(pbPost);
         }
       }
-      // console.log(pbType, pbVal)
       games[i] = {
         ...games[i],
         pb_type: pbType,
@@ -143,5 +135,4 @@ export function addPBs(data, games, lvl) {
       };
     }
   }
-  // console.log("games", games)
 }

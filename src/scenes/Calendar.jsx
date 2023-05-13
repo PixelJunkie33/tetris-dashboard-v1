@@ -23,7 +23,6 @@ const Calendar = ({ calendar, onUpdateCalendar }) => {
     const title = prompt("Please enter a new title for your event");
     const calendarApi = selected.view.calendar;
     calendarApi.unselect();
-    console.log("selected", selected);
 
     if (title) {
       const event = {
@@ -37,7 +36,6 @@ const Calendar = ({ calendar, onUpdateCalendar }) => {
       temp.push(event);
       onUpdateCalendar(temp);
     }
-    console.log(calendar);
   };
 
   const handleEventClick = (selected) => {
@@ -47,8 +45,9 @@ const Calendar = ({ calendar, onUpdateCalendar }) => {
       )
     ) {
       selected.event.remove();
-      onUpdateCalendar(calendar.filter((x) => x.id !== selected.event._def.publicId))
-      console.log(calendar)
+      onUpdateCalendar(
+        calendar.filter((x) => x.id !== selected.event._def.publicId)
+      );
     }
   };
 
@@ -66,29 +65,30 @@ const Calendar = ({ calendar, onUpdateCalendar }) => {
         >
           <Typography variant="h5">Events</Typography>
           <List>
-            {calendar && calendar.map((event) => (
-              <ListItem
-                key={event.id}
-                sx={{
-                  backgroundColor: colors.greenAccent[500],
-                  margin: "10px 0",
-                  borderRadius: "2px",
-                }}
-              >
-                <ListItemText
-                  primary={event.title}
-                  secondary={
-                    <Typography>
-                      {formatDate(event.start, {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                      })}
-                    </Typography>
-                  }
-                />
-              </ListItem>
-            ))}
+            {calendar &&
+              calendar.map((event) => (
+                <ListItem
+                  key={event.id}
+                  sx={{
+                    backgroundColor: colors.greenAccent[500],
+                    margin: "10px 0",
+                    borderRadius: "2px",
+                  }}
+                >
+                  <ListItemText
+                    primary={event.title}
+                    secondary={
+                      <Typography>
+                        {formatDate(event.start, {
+                          year: "numeric",
+                          month: "short",
+                          day: "numeric",
+                        })}
+                      </Typography>
+                    }
+                  />
+                </ListItem>
+              ))}
           </List>
         </Box>
 
