@@ -99,10 +99,10 @@ const Sidebar = () => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  Britney Frei
+                  Jane Doe
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
-                  NES Tetris Player
+                  Pro NES Tetris Player
                 </Typography>
               </Box>
             </Box>

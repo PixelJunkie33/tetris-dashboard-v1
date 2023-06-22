@@ -51,5 +51,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "React app that takes game data and displays it as graphs and tables to give players insight into their gameplay over time and by level.",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC"
 }
